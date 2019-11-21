@@ -1,0 +1,48 @@
+
+<form #Form="ngForm" (ngSubmit)="submit(Form)">
+
+<div class="col-sm-4">
+  <label for="pi">Ponto Inicial</label>
+  <select class="form-control" required ngModel name="pi">
+    <option  disabled>Ponto Inicial</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+  </select>
+</div>
+
+<div class="col-sm-4">
+<label for="pf">Ponto Final</label>
+<select class="form-control" required ngModel name="pf">
+    <option  disabled>Ponto Final</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+    <option value="E">E</option>
+  </select>
+</div>
+
+<div class="col-sm-6">
+        <label for="autonomia">Autonomia do veículo:</label>
+        <input type="text" id="autonomia" class="form-control" 
+        ngModel required name="autonomia">
+</div>
+
+<div class="col-sm-6">
+        <label for="l_combus">Valor do combustível (litro):</label>
+        <input type="text" name="l_combus" class="form-control" 
+        ngModel required>
+</div>
+
+  <br>
+  <button type="submit" class="btn btn-primary" [disabled]="Form.invalid">Calcula</button>
+</form>  
+
+<div *ngIf="dados" class="container">
+ {{ dados | json }}
+</div>
+
+<div *ngIf="err" class="container">
+ {{ err | json}}
+</div>
