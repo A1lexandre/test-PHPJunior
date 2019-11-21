@@ -55,7 +55,7 @@ class RouteService {
         array_push($rotasCalculadas, array('rota' => $rotaPossivel, 'trajeto' => $soma, 'custo' => $custo));
       }
       
-      return ['rotas_possiveis' => $rotasCalculadas, 'rota_menor_custo' => $this->rotaMenorCusto($rotasCalculadas)[0]];
+      return ['rotas_possiveis' => $rotasCalculadas, 'rota_menor_custo' => $this->rotaMenorCusto($rotasCalculadas)];
     }
 
     // retorna a rota com o menor custo
